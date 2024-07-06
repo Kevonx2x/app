@@ -1,0 +1,10 @@
+.quantityAdjuster {
+    margin: 5px;
+    
+}
+
+.quantity-label {
+    margin: 0 10px;
+    min-width: 20px;
+    text-align: center;
+}
