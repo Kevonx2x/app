@@ -1,14 +1,14 @@
-.catalog{
+.roster {
     margin-bottom: 100px;
 }
-.catalog h1 {
+
+.roster h1 {
     color: rgb(4, 5, 5);
     text-align: center;
     margin: 12px 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.catalog .filters button {
+.roster .filters button {
     margin-right: 5px;
-    
 }

@@ -1,15 +1,15 @@
 import './styles/footer.css';
 
-function Footer(){
-    return(
+function Footer() {
+    return (
         <div className='footer'>
-            <hr/>
+            <hr />
             <footer className='content'>
                 <div>
-                    <span>2024 Compddany, Inc</span>
+                    <span>2024 Company | Development Page</span>
                 </div>
                 <div>
-                    <span>Company</span>
+                    <span>Shopping List</span>
                 </div>
             </footer>
         </div>

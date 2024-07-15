@@ -18,6 +18,7 @@ function QuantityAdjuster(){
     // function decrease() {
     //     let dec = quantity - 1;
     //     if(dec < 1) return;
+    
 
     //     setQuantity(dec)
     //     }
@@ -46,7 +47,7 @@ function QuantityAdjuster(){
                 -
             </button>
 
-            <label className='quantity-label'>${quantity}</label>
+            <label className='quantity-label'>{quantity}</label>
 
             <button  type="button" class="btn btn-outline-secondary"  disabled={quantity===20} onClick={() => setQuantity(quantity + 1)}>
                 +
