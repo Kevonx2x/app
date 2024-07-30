@@ -1,43 +1,30 @@
-import './styles/player.css';
-import QuantityAdjuster from './quantityadjuster';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import DataService from './services/dataService'; // Adjusted the path
 
-function Player(props) {
-    const [quantity, setQuantity] = useState(1);
+function Player() {
+    const [players, setPlayers] = useState([]);
 
-    function add() {
-        console.log('adding ' + props.info.title);
-    }
+    useEffect(() => {
+        loadPlayers();
+    }, []);
 
-    function handleQuantityChange(val) {
-        setQuantity(val);
-    }
-
-    function getTotal() {
-        let total = props.info.card * quantity;
-        return total.toFixed(2);
-    }
-
+    const loadPlayers = async () => {
+        try {
+            let data = await DataService.getPlayers();
+            setPlayers(data);
+        } catch (error) {
+            console.error("Error loading players:", error);
+        }
+    };
 
     return (
-        <div className="player">
-
-            <img src={"/images/" + props.info.image} alt=""/>
-
-            <h5>{props.info.title}</h5>
-
-
-            <label className={'total'}>${getTotal()}</label>
-            <label>${props.info.card.toFixed(2)}</label>
-
-
-            <QuantityAdjuster onChange={handleQuantityChange}/>
-
-            <button onClick={add} className='btn btn-sm btn-success'>Add</button>
-            
-            <i class="fa-solid fa-cart-shopping"></i>
-
-
+        <div>
+            <h1>Player List</h1>
+            <ul>
+                {players.map(player => (
+                    <li key={player._id}>{player.name} - {player.position}</li>
+                ))}
+            </ul>
         </div>
     );
 }

@@ -23,6 +23,7 @@ a:hover{
     color: rgb(211, 217, 222);
 }
 
+
 .navbar-container {
     width: 97%;
     height: 75px;
@@ -38,6 +39,7 @@ a:hover{
 }
 
 .navbar-logo a {
+    margin-left: 10px;
     font-size: 1.5em;
     font-weight: bold;
     color: white;
@@ -72,6 +74,10 @@ a:hover{
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+
+    .navbar-btn {
+        margin-left: 10px;
     }
 
     .navbar-menu a {
